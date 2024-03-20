@@ -1,0 +1,23 @@
+---
+import NavBar from "../components/NavBar.astro"
+import Carousel from "../components/Carousel.astro"
+---
+
+<section>
+    <NavBar />
+    <Carousel />
+</section>
+
+<style>
+    section {
+        height: calc(100vh - 48px);
+        width: 100%;
+        background-color: var(--light-blue);
+        background-image: url("fondo1.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-blend-mode: multiply;
+    }
+    
+</style>

@@ -1,0 +1,108 @@
+<nav>
+    <input type="checkbox" id="check" />
+    <label for="check">
+        <svg
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#FFF"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M4 6l16 0"></path>
+            <path d="M4 12l16 0"></path>
+            <path d="M4 18l16 0"></path>
+        </svg>
+    </label>
+    <a class="logo-nav" href="#">
+        <img src="logo.png" alt="Logotipo DHISO Ingenieria y Construcción" />
+    </a>
+    <ul>
+        <li><a href="#">INICIO</a></li>
+        <li><a href="#">QUIENES SOMOS</a></li>
+        <li><a href="#">PROYECTOS</a></li>
+        <li><a href="#">SERVICIOS</a></li>
+        <li><a href="#">CONTACTANOS</a></li>
+    </ul>
+</nav>
+
+<style>
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row-reverse;
+        width: 100%;
+        padding: 40px 30px;
+    }
+    nav label {
+        cursor: pointer;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    .logo-nav img {
+        height: 100px;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: var(--dark-blue);
+        top: 230px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    ul li {
+        display: block;
+        margin: 50px;
+        line-height: 30px;
+    }
+    ul li a {
+        font-size: 1.7rem;
+        font-family: var(--cocogoose-light);
+        font-weight: bold;
+        color: #fff;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+    @media only screen and (min-width: 901px) {
+        nav {
+            margin: 0 auto;
+            max-width: 1180px;
+            padding: 54px 30px;
+            flex-direction: row;
+        }
+        nav label {
+            display: none;
+        }
+        .logo-nav img {
+            height: 132px;
+        }
+        ul {
+            position: static;
+            display: flex;
+            gap: 30px;
+            width: auto;
+            height: auto;
+            background: none;
+        }
+        ul li {
+            margin: 0;
+        }
+        ul li:hover {
+            transform: translateY(-5px);
+
+            transition: 0.3s;
+        }
+        ul li a:hover {
+            color: #b4b4b4;
+            transition: 0.3s;
+        }
+    }
+</style>

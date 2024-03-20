@@ -1,0 +1,111 @@
+<div class="itemCarrusel">
+    <div class="contentCarrusel">
+        <h2>PROYECTOS</h2>
+        <a href="">CONTACTANOS</a>
+    </div>
+    <div class="controlsCarrusel">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="left"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#FFF"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M15 6l-6 6l6 6"></path>
+        </svg>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="right"
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#FFF"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M9 6l6 6l-6 6"></path>
+        </svg>
+    </div>
+</div>
+
+<style>
+    .itemCarrusel {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 230px);
+        border-bottom: 25px solid var(--red);
+    }
+    .contentCarrusel {
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    .contentCarrusel h2 {
+        font-family: var(--cocogoose-light);
+        font-size: 4.5rem;
+        font-weight: bold;
+        color: #fff;
+        border-top: 3px solid var(--red);
+    }
+    .contentCarrusel a {
+        padding: 15px 20px;
+        border-radius: 10px;
+        background: var(--red);
+        font-family: var(--cocogoose-light);
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #fff;
+    }
+    .controlsCarrusel {
+        position: absolute;
+        top: calc(50% - 44px);
+        width: 100%;
+        height: auto;
+        padding: 0 10px;
+    }
+    .controlsCarrusel svg {
+        cursor: pointer;
+    }
+    .controlsCarrusel .left {
+        float: left;
+    }
+    .controlsCarrusel .right {
+        float: right;
+    }
+    @media only screen and (min-width: 901px) {
+        .itemCarrusel {
+            height: calc(100vh - 290px);
+            border-bottom: 30px solid var(--red);
+        }
+        .contentCarrusel {
+            gap: 20px;
+        }
+        .contentCarrusel h2 {
+            font-size: 9rem;
+        }
+        .contentCarrusel a {
+            padding: 20px 30px;
+            font-size: 2.2rem;
+            line-height: 2.2rem;
+        }
+        .controlsCarrusel {
+            padding: 0 25px;
+        }
+    }
+</style>

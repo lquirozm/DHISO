@@ -1,0 +1,70 @@
+<div class="info-bar">
+    <div class="info-bar_item">
+        <svg
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#FF0138"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+            <path
+                d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"
+            ></path>
+        </svg>
+        <p>Villanelo N° 180 Viña del Mar - CHILE.</p>
+    </div>
+    <div class="info-bar_item">
+        <svg
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#FF0138"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+                d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+            ></path>
+        </svg>
+        <p>+56 938967493</p>
+    </div>
+</div>
+
+<style>
+    .info-bar {
+        display: flex;
+        justify-content: center;
+        gap: 35px;
+        height: 48px;
+        width: 100%;
+        background: var(--gray);
+    }
+    .info-bar_item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .info-bar_item svg {
+        height: 25px;
+        color: var(--red);
+    }
+    .info-bar_item p {
+        font-family: var(--helvetica-regular);
+        font-size: 1.2rem;
+        color: #F1F1F1;
+    }
+
+    @media only screen and (min-width: 651px) {
+        .info-bar {
+            padding-left: 70px;
+            justify-content: flex-start;
+        }
+        .info-bar_item p {
+            font-size: 1.8rem;
+        }
+    }
+</style>
