@@ -1,0 +1,153 @@
+<section id="Proyectos">
+    <header>
+        <h2>PROYECTOS</h2>
+    </header>
+    <div class="containerCarrusel">
+        <div class="itemCarrusel">
+            <div class="contentCarrusel">
+                <img src="img1.png" alt="" />
+            </div>
+            <div class="controlsCarrusel_left">
+                <svg
+                    width="44"
+                    height="44"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#FFF"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M15 6l-6 6l6 6"></path>
+                </svg>
+            </div>
+            <div class="controlsCarrusel_right">
+                <svg
+                    width="44"
+                    height="44"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#FFF"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M9 6l6 6l-6 6"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="itemCarrusel">
+            <div class="contentCarrusel">
+                <img src="img2.png" alt="" />
+            </div>
+            <div class="controlsCarrusel_left">
+                <svg
+                    width="44"
+                    height="44"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#FFF"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M15 6l-6 6l6 6"></path>
+                </svg>
+            </div>
+            <div class="controlsCarrusel_right">
+                <svg
+                    width="44"
+                    height="44"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="#FFF"
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M9 6l6 6l-6 6"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    section {
+        padding: 25px 20px;
+        height: auto;
+        width: 100%;
+        background-color: var(--light-blue);
+        background-image: url("fondo2.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        background-blend-mode: multiply;
+    }
+    header {
+        width: 100%;
+        display: flex;
+    }
+    header h2 {
+        border-top: 3px solid var(--red);
+        font-family: var(--cocogoose-light);
+        font-weight: bold;
+        font-size: 3.9rem;
+        color: white;
+    }
+    .containerCarrusel {
+        height: 480px;
+        overflow: hidden;
+    }
+    .itemCarrusel {
+        position: relative;
+        width: 100%;
+    }
+    .contentCarrusel {
+        margin: 40px auto;
+        width: 80%;
+        height: 400px;
+    }
+    .contentCarrusel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .controlsCarrusel_left {
+        position: absolute;
+        top: calc(50% - 44px);
+    }
+    .controlsCarrusel_left svg {
+        cursor: pointer;
+    }
+    .controlsCarrusel_right {
+        position: absolute;
+        top: calc(50% - 44px);
+        right: 0;
+    }
+    .controlsCarrusel_right svg {
+        cursor: pointer;
+    }
+    @media only screen and (min-width: 901px) {
+        section {
+            padding: 70px 90px;
+        }
+        section header {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        .containerCarrusel {
+            margin: 0 auto;
+            height: 680px;
+            max-width: 1440px;
+        }
+        .contentCarrusel {
+            margin: 80px auto 0;
+            height: 600px;
+        }
+    }
+</style>

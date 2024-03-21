@@ -1,0 +1,139 @@
+<section class="main-section" id="Servicios">
+    <header>
+        <h2>SERVICIOS</h2>
+    </header>
+    <section class="articles-section">
+        <article>
+            <img src="icon1.png" alt="Icono Informativo" />
+            <div>
+                <h3>SERVICIOS PREVIOS A LA CONSTRUCCIÓN</h3>
+                <p>
+                    Nos tomamos nuestro tiempo en la planificación inicial antes
+                    de que comience cualquier construcción, para equilibrar
+                    todas las cuestiones financieras y de eficiencia de
+                    antemano.
+                </p>
+            </div>
+        </article>
+        <article>
+            <img src="icon2.png" alt="Icono Informativo" />
+            <div>
+                <h3>GESTIÓN DE LA CONSTRUCCIÓN</h3>
+                <p>
+                    La gestión de proyectos de construcción es fundamental.
+                    Estamos utilizando los métodos de ciclos de vida más
+                    eficientes en tiempo e iteraciones para eso.
+                </p>
+            </div>
+        </article>
+        <article>
+            <img src="icon3.png" alt="Icono Informativo" />
+            <div>
+                <h3>SERVICIOS PREVIOS A LA CONSTRUCCIÓN</h3>
+                <p>
+                    Muchas veces la esencia física y funcional de cualquier
+                    proyecto de construcción debe representarse digitalmente, en
+                    un formato de modelo 3D
+                </p>
+            </div>
+        </article>
+    </section>
+    <section class="service-items">
+        <p>● Diseño & Arquitectura</p>
+        <p>● Calidad & Autocontrol</p>
+        <p>● Construcción</p>
+        <p>● Gestión de Proyectos</p>
+        <p>● Ingenieria</p>
+        <p>● Asesoría</p>
+    </section>
+</section>
+
+<style>
+    .main-section {
+        padding: 25px 20px;
+        height: auto;
+        width: 100%;
+        background-image: url("fondo3.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    header {
+        display: flex;
+    }
+    header h2 {
+        font-family: var(--cocogoose-light);
+        font-size: 3.9rem;
+        font-weight: bold;
+        color: var(--ligth-blue);
+        border-top: 3px solid var(--red);
+    }
+    .articles-section {
+        margin: 20px auto;
+        width: 100%;
+        max-width: 750px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    .articles-section article {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .articles-section article img {
+        height: 62px;
+        width: 62px;
+    }
+    .articles-section article div h3 {
+        font-family: var(--helvetica-regular);
+        font-size: 1.4rem;
+        color: var(--dark-blue);
+        margin-bottom: 10px;
+    }
+    .articles-section article div p {
+        font-family: var(--helvetica-regular);
+        font-size: 1.4rem;
+        color: var(--dark-blue);
+    }
+    .service-items {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 750px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .service-items p {
+        font-family: var(--helvetica-regular);
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: var(--ligth-blue);
+    }
+    @media only screen and (min-width: 1101px) {
+        .main-section {
+            padding: 90px 150px;
+        }
+        header {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        .articles-section {
+            max-width: 1120px;
+            margin: 50px auto 35px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .articles-section article {
+            max-width: 330px;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        .service-items {
+            max-width: 1120px;
+        }
+    }
+</style>
