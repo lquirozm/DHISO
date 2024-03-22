@@ -4,85 +4,79 @@
     </header>
     <div class="containerCarrusel">
         <div class="itemCarrusel">
-            <div class="contentCarrusel">
-                <img src="img1.png" alt="" />
-            </div>
-            <div class="controlsCarrusel_left">
-                <svg
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="#FFF"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M15 6l-6 6l6 6"></path>
-                </svg>
-            </div>
-            <div class="controlsCarrusel_right">
-                <svg
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="#FFF"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M9 6l6 6l-6 6"></path>
-                </svg>
-            </div>
+            <img src="img1.png" alt="" />
         </div>
         <div class="itemCarrusel">
-            <div class="contentCarrusel">
-                <img src="img2.png" alt="" />
-            </div>
-            <div class="controlsCarrusel_left">
-                <svg
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="#FFF"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M15 6l-6 6l6 6"></path>
-                </svg>
-            </div>
-            <div class="controlsCarrusel_right">
-                <svg
-                    width="44"
-                    height="44"
-                    viewBox="0 0 24 24"
-                    stroke-width="1.5"
-                    stroke="#FFF"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                    <path d="M9 6l6 6l-6 6"></path>
-                </svg>
-            </div>
+            <img src="img2.png" alt="" />
         </div>
+        <div class="itemCarrusel">
+            <img src="img3.png" alt="" />
+        </div>
+        <div class="itemCarrusel">
+            <img src="img4.png" alt="" />
+        </div>
+        <div class="itemCarrusel">
+            <img src="img5.png" alt="" />
+        </div>
+        <div class="itemCarrusel">
+            <img src="img6.png" alt="" />
+        </div>
+        <div class="itemCarrusel">
+            <img src="img7.jpg" alt="" />
+        </div>
+        <div class="itemCarrusel">
+            <img src="img8.jpg" alt="" />
+        </div>
+        <div class="itemCarrusel">
+            <img src="img9.jpg" alt="" />
+        </div>
+        <div class="itemCarrusel">
+            <img src="img10.jpg" alt="" />
+        </div>
+        <div class="itemCarrusel">
+            <img src="img11.jpg" alt="" />
+        </div>
+    </div>
+    <div class="controlsCarrusel_left">
+        <svg
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#FFF"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M15 6l-6 6l6 6"></path>
+        </svg>
+    </div>
+    <div class="controlsCarrusel_right">
+        <svg
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#FFF"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M9 6l6 6l-6 6"></path>
+        </svg>
     </div>
 </section>
 
 <style>
     section {
+        position: relative;
         padding: 25px 20px;
         height: auto;
         width: 100%;
         background-color: var(--light-blue);
-        background-image: url("fondo2.png");
+        background-image: url("https://dhiso.vercel.app/fondo2.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
@@ -91,6 +85,7 @@
     header {
         width: 100%;
         display: flex;
+        margin-bottom: 20px;
     }
     header h2 {
         border-top: 3px solid var(--red);
@@ -100,26 +95,26 @@
         color: white;
     }
     .containerCarrusel {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
         height: 480px;
         overflow: hidden;
     }
     .itemCarrusel {
-        position: relative;
-        width: 100%;
-    }
-    .contentCarrusel {
-        margin: 40px auto;
-        width: 80%;
-        height: 400px;
-    }
-    .contentCarrusel img {
-        width: 100%;
+        min-width: 100%;
         height: 100%;
+    }
+    .itemCarrusel img {
+        height: 100%;
+        width: 100%;
         object-fit: cover;
+        object-position: center;
     }
     .controlsCarrusel_left {
         position: absolute;
         top: calc(50% - 44px);
+        left: 5%;
     }
     .controlsCarrusel_left svg {
         cursor: pointer;
@@ -127,7 +122,7 @@
     .controlsCarrusel_right {
         position: absolute;
         top: calc(50% - 44px);
-        right: 0;
+        right: 5%;
     }
     .controlsCarrusel_right svg {
         cursor: pointer;
@@ -138,12 +133,12 @@
         }
         section header {
             max-width: 1120px;
-            margin: 0 auto;
+            margin: 0 auto 100px;
         }
         .containerCarrusel {
             margin: 0 auto;
             height: 680px;
-            max-width: 1440px;
+            max-width: 1120px;
         }
         .contentCarrusel {
             margin: 80px auto 0;
@@ -151,3 +146,46 @@
         }
     }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".containerCarrusel .itemCarrusel")
+        const nextBtn = document.querySelector(".controlsCarrusel_right")
+        const prevBtn = document.querySelector(".controlsCarrusel_left");
+
+        let actualIndex = 0;
+
+        function showElement() {
+            elements.forEach((element, index) => {
+                if (index === actualIndex) {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            });         
+        }
+
+        function next() {
+            if (actualIndex < elements.length - 1) {
+                actualIndex++;
+            } else {
+                actualIndex = 0;
+            }
+            showElement();
+        }
+
+        function back() {
+            if (actualIndex > 0) {
+                actualIndex--;
+            } else {
+                actualIndex = elements.length - 1;
+            }
+            showElement();
+        }
+
+        showElement();
+
+        nextBtn.addEventListener("click", next)
+        prevBtn.addEventListener("click", back)
+    })
+</script>

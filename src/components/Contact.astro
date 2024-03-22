@@ -1,0 +1,158 @@
+<section class="main-section" id="Contacto">
+    <header>
+        <h2>Tienes un proyecto en mente? Estamos listos para escucharte</h2>
+    </header>
+    <section class="contact_form">
+        <article class="contact">
+            <h3>CONTACTANOS</h3>
+            <p>Tel. +56 938967493</p>
+            <p>Villanelo N° 180 Viña del Mar - CHILE.</p>
+            <p>Ventas@dhisoingenieriayconstruccion.com</p>
+        </article>
+        <form action="">
+            <input class="input-form" type="text" placeholder="Nombre Completo" name="" id="">
+            <input class="input-form" type="email" placeholder="e-mail" name="" id="">
+            <textarea placeholder="Escribe aquí tu mensaje..." name="" id=""></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+</section>
+
+<style>
+    .main-section {
+        width: 100%;
+        height: auto;
+        padding: 25px 20px;
+        background: var(--light-blue);
+        background-image: url("https://dhiso.vercel.app/fondo4.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-blend-mode: multiply;
+    }
+    header {
+        width: 100%;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    header h2 {
+        margin: 0 auto;
+        max-width: 680px;
+        border-top: 3px solid var(--red);
+        font-family: var(--cocogoose-light);
+        font-weight: 800;
+        font-size: 3.8rem;
+        line-height: 4.2rem;
+        color: #FFF;
+    }
+    .contact_form {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 680px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+    .contact_form .contact {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contact_form .contact h3 {
+        margin-bottom: 10px;
+        font-family: var(--cocogoose-light);
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 2.6rem;
+        color: #FFF;
+    }
+    .contact_form .contact p {
+        font-family: var(--helvetica-regular);
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        color: #fff;
+    }
+    .contact_form .contact p:first-of-type {
+        font-size: 2.3rem;
+        line-height: 2.7rem
+    }
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    form .input-form {
+        padding: 8px 28px;
+        width: 100%;
+        border: none;
+        border-radius: 3px;
+        font-family: var(--cocogoose-light);
+        font-weight: 500;
+        font-size: 1.6rem;
+        color: var(--dark-blue);
+    }
+    form .input-form::placeholder {
+        font-family: var(--cocogoose-light);
+        font-weight: 500;
+        font-size: 1.6rem;
+        color: #C5C5C5;
+    }
+    form textarea {
+        width: 100%;
+        height: 120px;
+        padding: 8px 28px;
+        border-radius: 3px;
+        font-family: var(--cocogoose-light);
+        font-weight: 500;
+        font-size: 1.6rem;
+        color: var(--dark-blue);
+        resize: none;
+    }
+    form textarea::placeholder {
+        color: #C5C5C5;
+    }
+    form input[type=submit] {
+        cursor: pointer;
+        border: none;
+        width: 100%;
+        max-width: 170px;
+        padding: 17px 54px;
+        background-color: var(--red);
+        font-family: var(--cocogoose-light);
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+    form input[type=submit]:hover {
+        background-color: #910C0C;
+    }
+    @media only screen and (min-width: 1025px) {
+        .main-section {
+            padding: 80px 80px 260px;
+        }
+        header {
+            margin-bottom: 176px;
+        }
+        header h2 {
+            text-align: center;
+        }
+        .contact_form {
+            max-width: 1020px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .contact_form .contact {
+            max-width: 360px;
+        }
+        form {
+            max-width: 610px;
+            align-items: flex-start;
+        }
+    }
+</style>

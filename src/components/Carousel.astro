@@ -1,12 +1,30 @@
-<div class="itemCarrusel">
-    <div class="contentCarrusel">
-        <h2>PROYECTOS</h2>
-        <a href="">CONTACTANOS</a>
+<div class="containerItemsCarrusel">
+    <div class="itemCarrusel">
+        <div class="contentCarrusel">
+            <h2>PROYECTOS</h2>
+            <p>Innovación en cada proyecto: Construyendo un futuro sólido.</p>
+            <a href="">CONTACTANOS</a>
+        </div>
     </div>
-    <div class="controlsCarrusel">
+    <div class="itemCarrusel">
+        <div class="contentCarrusel">
+            <h2>CONSTRUCCIÓN</h2>
+            <p>
+                Construcción con calidad y compromiso: Transformando ideas en
+                realidad.
+            </p>
+            <a href="">CONTACTANOS</a>
+        </div>
+    </div>
+    <div class="itemCarrusel">
+        <div class="contentCarrusel">
+            <h2>DESCUENTOS</h2>
+            <p>¡Descuentos exclusivos para tu proyecto de ensueño!</p>
+            <a href="">CONTACTANOS</a>
+        </div>
+    </div>
+    <div class="controlCarruselLeft" id="anterior">
         <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="left"
             width="44"
             height="44"
             viewBox="0 0 24 24"
@@ -19,9 +37,9 @@
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M15 6l-6 6l6 6"></path>
         </svg>
+    </div>
+    <div class="controlCarruselRight" id="siguiente">
         <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="right"
             width="44"
             height="44"
             viewBox="0 0 24 24"
@@ -38,17 +56,27 @@
 </div>
 
 <style>
+    .containerItemsCarrusel {
+        position: relative;
+        height: calc(100vh - 229px);
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        transition: all 0.3s ease-in-out ;
+    }
     .itemCarrusel {
         position: relative;
-        width: 100%;
-        height: calc(100vh - 230px);
+        min-width: 100vw;
+        height: 100%;
         border-bottom: 25px solid var(--red);
+        transition: all 0.2s;
     }
     .contentCarrusel {
         position: relative;
         z-index: 1;
         margin: 0 auto;
-        width: 80%;
+        width: 70%;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -63,6 +91,14 @@
         color: #fff;
         border-top: 3px solid var(--red);
     }
+    .contentCarrusel p {
+        font-family: var(--cocogoose-light);
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 2.2rem;
+        color: #fff;
+        text-align: center;
+    }
     .contentCarrusel a {
         padding: 15px 20px;
         border-radius: 10px;
@@ -71,34 +107,39 @@
         font-size: 1.6rem;
         font-weight: bold;
         color: #fff;
+        transition: all 0.3s ease-in-out;
     }
-    .controlsCarrusel {
+    .contentCarrusel a:hover {
+        background-color: #910c0c;
+    }
+    .controlCarruselLeft {
+        cursor: pointer;
         position: absolute;
         top: calc(50% - 44px);
-        width: 100%;
-        height: auto;
-        padding: 0 10px;
+        left: 5%;
     }
-    .controlsCarrusel svg {
+    .controlCarruselRight {
         cursor: pointer;
-    }
-    .controlsCarrusel .left {
-        float: left;
-    }
-    .controlsCarrusel .right {
-        float: right;
+        position: absolute;
+        top: calc(50% - 44px);
+        right: 5%;
     }
     @media only screen and (min-width: 901px) {
+        .containerItemsCarrusel {
+            height: calc(100vh - 289px);
+        }
         .itemCarrusel {
-            height: calc(100vh - 290px);
+            height: 100%;
             border-bottom: 30px solid var(--red);
         }
         .contentCarrusel {
+            max-width: 1180px;
             width: 90%;
             gap: 20px;
         }
         .contentCarrusel h2 {
             font-size: 9rem;
+            line-height: 9.4rem;
         }
         .contentCarrusel a {
             padding: 20px 30px;
@@ -106,7 +147,51 @@
             line-height: 2.2rem;
         }
         .controlsCarrusel {
-            padding: 0 25px;
+            padding: 0 100px;
         }
     }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const carrusel = document.querySelector(".containerItemsCarrusel");
+        const elementos = document.querySelectorAll(".containerItemsCarrusel .itemCarrusel");
+        const botonAnterior = document.getElementById("anterior");
+        const botonSiguiente = document.getElementById("siguiente");
+
+        let indiceActual = 0;
+
+        function mostrarElemento() {
+            elementos.forEach((elemento, index) => {
+                if (index === indiceActual) {
+                    elemento.style.display = "block";
+                } else {
+                    elemento.style.display = "none";
+                }
+            });
+        }
+
+        function avanzar() {
+            if (indiceActual < elementos.length - 1) {
+                indiceActual++;
+            } else {
+                indiceActual = 0;
+            }
+            mostrarElemento();
+        }
+
+        function retroceder() {
+            if (indiceActual > 0) {
+                indiceActual--;
+            } else {
+                indiceActual = elementos.length - 1;
+            }
+            mostrarElemento();
+        }
+
+        mostrarElemento();
+
+        botonAnterior.addEventListener("click", retroceder);
+        botonSiguiente.addEventListener("click", avanzar);
+    });
+</script>
