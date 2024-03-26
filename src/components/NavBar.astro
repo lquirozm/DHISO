@@ -1,26 +1,24 @@
 <nav>
-    <input type="checkbox" id="check" />
-    <label for="check">
-        <svg
-            width="44"
-            height="44"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="#FFF"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-        >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M4 6l16 0"></path>
-            <path d="M4 12l16 0"></path>
-            <path d="M4 18l16 0"></path>
-        </svg>
-    </label>
+    <svg
+        id="btnMenu"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#FFF"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M4 6l16 0"></path>
+        <path d="M4 12l16 0"></path>
+        <path d="M4 18l16 0"></path>
+    </svg>
     <a class="logo-nav" href="#">
         <img src="logo.png" alt="Logotipo DHISO Ingenieria y Construcción" />
     </a>
-    <ul>
+    <ul id="ulList">
         <li><a href="#">INICIO</a></li>
         <li><a href="#QuienesSomos">QUIENES SOMOS</a></li>
         <li><a href="#Proyectos">PROYECTOS</a></li>
@@ -31,6 +29,7 @@
 
 <style>
     nav {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -38,22 +37,19 @@
         width: 100%;
         padding: 40px 30px;
     }
-    nav label {
+    nav svg {
         cursor: pointer;
-    }
-    input[type="checkbox"] {
-        display: none;
     }
     .logo-nav img {
         height: 100px;
     }
     ul {
         z-index: 3;
-        position: fixed;
+        position: absolute;
         width: 100%;
-        height: 100vh;
+        height: calc(100vh - 229px);
         background: var(--dark-blue);
-        top: 230px;
+        top: 181px;
         left: -100%;
         text-align: center;
         transition: all 0.5s;
@@ -79,7 +75,7 @@
             padding: 54px 30px;
             flex-direction: row;
         }
-        nav label {
+        nav svg {
             display: none;
         }
         .logo-nav img {
@@ -106,3 +102,35 @@
         }
     }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const ulList = document.getElementById("ulList");
+        const btn = document.getElementById("btnMenu");
+        const links = document.querySelectorAll("#ulList li a");
+
+        let menuVisible = false;
+
+        btn.addEventListener("click", function () {
+            if (!menuVisible) {
+                ulList.style.left = "0";
+                menuVisible = true;
+            } else {
+                ulList.style.left = "-100%";
+                menuVisible = false;
+            }
+        });
+
+        links.forEach(function (link) {
+            link.addEventListener("click", function () {
+                ulList.style.left = "-100%";
+
+                if (menuVisible === true) {
+                    menuVisible = false;
+                } else {
+                    menuVisible = true;
+                }
+            });
+        });
+    });
+</script>

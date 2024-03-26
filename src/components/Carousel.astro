@@ -3,7 +3,7 @@
         <div class="contentCarrusel">
             <h2>PROYECTOS</h2>
             <p>Innovación en cada proyecto: Construyendo un futuro sólido.</p>
-            <a href="">CONTACTANOS</a>
+            <a href="#Contacto">CONTACTANOS</a>
         </div>
     </div>
     <div class="itemCarrusel">
@@ -13,14 +13,14 @@
                 Construcción con calidad y compromiso: Transformando ideas en
                 realidad.
             </p>
-            <a href="">CONTACTANOS</a>
+            <a href="#Contacto">CONTACTANOS</a>
         </div>
     </div>
     <div class="itemCarrusel">
         <div class="contentCarrusel">
             <h2>DESCUENTOS</h2>
             <p>¡Descuentos exclusivos para tu proyecto de ensueño!</p>
-            <a href="">CONTACTANOS</a>
+            <a href="#Contacto">CONTACTANOS</a>
         </div>
     </div>
     <div class="controlCarruselLeft" id="anterior">
@@ -63,19 +63,17 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
-        transition: all 0.3s ease-in-out ;
+        transition: transform 0.3s ease-in-out;
     }
     .itemCarrusel {
-        position: relative;
         min-width: 100vw;
         height: 100%;
+        display: flex;
+        justify-content: center;
         border-bottom: 25px solid var(--red);
-        transition: all 0.2s;
+        transition: all 0.5s ease   ;
     }
     .contentCarrusel {
-        position: relative;
-        z-index: 1;
-        margin: 0 auto;
         width: 70%;
         height: 100%;
         display: flex;
@@ -154,42 +152,34 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const carrusel = document.querySelector(".containerItemsCarrusel");
         const elementos = document.querySelectorAll(".containerItemsCarrusel .itemCarrusel");
         const botonAnterior = document.getElementById("anterior");
         const botonSiguiente = document.getElementById("siguiente");
 
-        let indiceActual = 0;
-
-        function mostrarElemento() {
-            elementos.forEach((elemento, index) => {
-                if (index === indiceActual) {
-                    elemento.style.display = "block";
-                } else {
-                    elemento.style.display = "none";
-                }
-            });
-        }
+        let currentIndex = 0;
 
         function avanzar() {
-            if (indiceActual < elementos.length - 1) {
-                indiceActual++;
-            } else {
-                indiceActual = 0;
+            currentIndex++;
+            if (currentIndex >= elementos.length) {
+                currentIndex = 0;
             }
             mostrarElemento();
         }
 
         function retroceder() {
-            if (indiceActual > 0) {
-                indiceActual--;
-            } else {
-                indiceActual = elementos.length - 1;
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = elementos.length - 1;
             }
             mostrarElemento();
         }
 
-        mostrarElemento();
+        function mostrarElemento() {
+            elementos.forEach((elemento, index) => {
+                const translateValue = `translateX(-${currentIndex * 100}%)`;
+                elemento.style.transform = translateValue;
+            });
+        }
 
         botonAnterior.addEventListener("click", retroceder);
         botonSiguiente.addEventListener("click", avanzar);
