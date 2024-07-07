@@ -9,7 +9,10 @@
             <p>Villanelo N° 180 Viña del Mar - CHILE.</p>
             <p>Ventas@dhisoingenieriayconstruccion.com</p>
             <div class="contact-media">
-                <a href="https://www.instagram.com/dhiso_ingenieria/" target="_blank">
+                <a
+                    href="https://www.instagram.com/dhiso_ingenieria/"
+                    target="_blank"
+                >
                     <svg
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
@@ -44,25 +47,33 @@
                 </a>
             </div>
         </article>
-        <form action="">
+        <form id="emailForm" method="POST">
             <input
                 class="input-form"
                 type="text"
                 placeholder="Nombre Completo"
-                name=""
-                id=""
+                name="name"
+                required
             />
             <input
                 class="input-form"
                 type="email"
                 placeholder="e-mail"
-                name=""
-                id=""
+                name="email"
+                required
             />
-            <textarea placeholder="Escribe aquí tu mensaje..." name="" id=""
-            ></textarea>
+            <textarea
+                placeholder="Escribe aquí tu mensaje..."
+                name="message"
+                required></textarea>
             <input type="submit" value="Enviar" />
         </form>
+        <div id="responseModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="responseMessage">Mensaje por defecto</p>
+            </div>
+        </div>
     </section>
 </section>
 
@@ -198,6 +209,50 @@
     form input[type="submit"]:hover {
         background-color: #910c0c;
     }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 15px;
+        width: 80%;
+        max-width: 600px;
+        text-align: center;
+        position: relative;
+    }
+
+    .modal-content p {
+        font-family: var(--cocogoose-light);
+        font-size: 2.6rem;
+        font-weight: 600;
+        color: var(--dark-blue);
+    }
+
+    .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
     @media only screen and (min-width: 1025px) {
         .main-section {
             padding: 80px 80px 260px;
@@ -222,3 +277,62 @@
         }
     }
 </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("emailForm");
+
+        const modal = document.getElementById("responseModal");
+        const closeBtn = document.querySelector(".close");
+        const responseMessage = document.getElementById("responseMessage");
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const name = form.elements["name"].value;
+            const email = form.elements["email"].value;
+            const message = form.elements["message"].value;
+
+            try {
+                const response = await fetch(
+                    "http://localhost:3000/send-email",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ name, email, message }),
+                    },
+                );
+
+                if (response.ok) {
+                    const data = await response.json();
+                    responseMessage.textContent = data.message;
+                } else {
+                    responseMessage.textContent =
+                        "Tu mensaje no pudo ser enviado. Inténtalo más tarde.";
+                }
+
+                modal.style.display = "block";
+
+                // Reiniciar el formulario y limpiar los campos
+                form.reset();
+            } catch (error) {
+                console.error("Error:", error);
+                responseMessage.textContent =
+                    "Hubo un error al enviar tu mensaje. Inténtalo más tarde.";
+                modal.style.display = "block";
+            }
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+</script>
