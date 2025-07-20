@@ -281,14 +281,14 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const form = document.getElementById("emailForm");
-
+        
         const modal = document.getElementById("responseModal");
         const closeBtn = document.querySelector(".close");
         const responseMessage = document.getElementById("responseMessage");
 
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
-
+            
             const name = form.elements["name"].value;
             const email = form.elements["email"].value;
             const message = form.elements["message"].value;
