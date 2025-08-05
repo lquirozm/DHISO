@@ -1,56 +1,111 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'photoswipe/style.css';
+---
+
 <section id="Proyectos">
     <header>
         <h2>PROYECTOS</h2>
     </header>
     <!-- Contenedor principal de Swiper -->
-    <div class="swiper">
+    <div class="swiper" id="swiper-albums">
          <!-- Wrapper adicional requerido -->
-        <div class="swiper-wrapper" id="my-slider">
-                    <!-- Los slides -->
-            <a 
-                class="swiper-slide"
-                href="/images/img48.jpg"
-                data-pswp-width="1000" data-pswp-height="800"
-                target="_blank"
-                data-cropped="true"
-            >
-                <img src="/images/img48.jpg" alt="">
-            </a>
-            <a 
-                class="swiper-slide"
-                href="/images/img49.jpg"
-                data-pswp-width="1000" data-pswp-height="800"
-                target="_blank"
-                data-cropped="true"
-            >
-                <img src="/images/img49.jpg" alt="">
-            </a>
-            <a 
-                class="swiper-slide"
-                href="/images/img50.jpg"
-                data-pswp-width="1000" data-pswp-height="800"
-                target="_blank"
-                data-cropped="true"
-            >
-                <img src="/images/img50.jpg" alt="">
-            </a>
-            <a 
-                class="swiper-slide"
-                href="/images/img50.jpg"
-                data-pswp-width="1000" data-pswp-height="800"
-                target="_blank"
-                data-cropped="true"
-            >
-                <img src="/images/img51.jpg" alt="">
-            </a>
+        <div class="swiper-wrapper">
+            <!-- Álbum 1 -->
+           <div class="swiper-slide">
+                <a href="/images/proyectos/1.CASA_ABULIA/img1.jpg"
+                    data-gallery="album1"
+                    data-pswp-width="1200"
+                    data-pswp-height="800"
+                    data-cropped="true">
+                    <img src="/images/proyectos/1.CASA_ABULIA/img1.jpg" alt="Proyecto Casa Ambuila" />
+                </a>
+            </div>
+            <!-- Álbum 2 -->
+            <div class="swiper-slide">
+                <a href="/images/proyectos/2.CASA_HORIZONTE/img1.jpg"
+                    data-gallery="album2"
+                    data-pswp-width="1200"
+                    data-pswp-height="800"
+                    data-cropped="true">
+                    <img src="/images/proyectos/2.CASA_HORIZONTE/img1.jpg" alt="Proyecto Casa Horizonte" />
+                </a>
+            </div>     
+             <!-- Álbum 3 -->
+            <div class="swiper-slide">
+                <a href="/images/proyectos/3.CASA_LIENZO/img1.jpg"
+                    data-gallery="album3"
+                    data-pswp-width="1200"
+                    data-pswp-height="800"
+                    data-cropped="true">
+                    <img src="/images/proyectos/3.CASA_LIENZO/img1.jpg" alt="Proyecto Casa Lienzo" />
+                </a>
+            </div>   
+             <!-- Álbum 4 -->
+            <div class="swiper-slide">
+                <a href="/images/proyectos/4.CASA_P/img1.jpg"
+                    data-gallery="album4"
+                    data-pswp-width="1200"
+                    data-pswp-height="800"
+                    data-cropped="true">
+                    <img src="/images/proyectos/4.CASA_P/img1.jpg" alt="Proyecto Casa P" />
+                </a>
+            </div>   
+             <!-- Álbum 3 -->
+            <div class="swiper-slide">
+                <a href="/images/proyectos/5.CASA_SOL/img1.jpg"
+                    data-gallery="album5"
+                    data-pswp-width="1200"
+                    data-pswp-height="800"
+                    data-cropped="true">
+                    <img src="/images/proyectos/5.CASA_SOL/img1.jpg" alt="Proyecto Casa Sol" />
+                </a>
+            </div>   
         </div>
 
     <!--botones de navegación -->
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
+    </div>
 
+    <!--Galeria oculta -->
+
+    <!-- Galería de Proyecto 1 -->
+    <div class="pswp-gallery" id="album1" style="display: none;">
+        <a href="/images/proyectos/1.CASA_ABULIA/img1.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/1.CASA_ABULIA/img2.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/1.CASA_ABULIA/img3.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+    </div>
+    <!-- Galería de Proyecto 2 -->
+    <div class="pswp-gallery" id="album2" style="display: none;">
+        <a href="/images/proyectos/2.CASA_HORIZONTE/img1.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/2.CASA_HORIZONTE/img2.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/2.CASA_HORIZONTE/img3.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+    </div>
+    <!-- Galería de Proyecto 3 -->
+    <div class="pswp-gallery" id="album3" style="display: none;">
+        <a href="/images/proyectos/3.CASA_LIENZO/img1.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/3.CASA_LIENZO/img2.png" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/3.CASA_LIENZO/img3.png" data-pswp-width="1200" data-pswp-height="800"></a>
+    </div>
+    <!-- Galería de Proyecto 4 -->
+    <div class="pswp-gallery" id="album4" style="display: none;">
+        <a href="/images/proyectos/4.CASA_P/img1.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/4.CASA_P/img2.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/4.CASA_P/img3.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+    </div>
+    <!-- Galería de Proyecto 5 -->
+    <div class="pswp-gallery" id="album5" style="display: none;">
+        <a href="/images/proyectos/5.CASA_SOL/img1.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/5.CASA_SOL/img2.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/5.CASA_SOL/img3.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/5.CASA_SOL/img4.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/5.CASA_SOL/img5.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
+        <a href="/images/proyectos/5.CASA_SOL/img6.jpg" data-pswp-width="1200" data-pswp-height="800"></a>
     </div>
 </section>
+
 <style>
     section{
         position: relative;
@@ -58,7 +113,7 @@
         height: auto;
         width: 100%;
         background-color: var(--light-blue);
-        background-image: url("https://dhiso.vercel.app/fondo2.png");
+        background-image: url("/images/fondo2.png");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
@@ -77,16 +132,18 @@
         font-size: 3.2rem;
         color: white;
     }
-  .swiper-slide {
+    .swiper-slide {
     height: 600px; /* Altura de cada slide */
     border-radius: 5px;
     overflow: hidden;   
-  }
-  .swiper-slide img {
+   }
+    .swiper-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+   }
+   
+    
   @media(max-width: 768px) {
   .swiper-slide {
     width: 80%; /* Útil si la propiedad slidesPerView es "auto" */
@@ -99,48 +156,4 @@
 }
 </style>
 
-<script>
-  import Swiper from 'swiper';
-  import 'swiper/css';
-  import { Autoplay, Navigation } from "swiper/modules";
-  import "swiper/css/navigation";
-  import PhotoSwipeLightbox from 'photoswipe/lightbox';
-  import 'photoswipe/style.css';
-
-  // Configurar Swiper
-  const swiper = new Swiper(".swiper", {
-    modules: [Navigation, Autoplay], // definir los módulos a usar
-    loop: true,            // definir si los slides estarán en bucle
-    slidesPerView: "auto",      // agregar número de slides para la pantalla
-    spaceBetween: 20,      // separación entre slides en px
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false, 
-    },
-
-    breakpoints: {
-    // Cuando la pantalla es >= 768px
-        768: {
-            slidesPerView: 2,
-            spaceBetween: 30
-         },
-    // Cuando la pantalla es >= 1024px
-        1024: {
-            slidesPerView: 3,
-            spaceBetween: 40
-        }
-     },
-    navigation: {          // definir botones next y prev para el módulo Navigation
-      prevEl: ".swiper-button-prev",
-      nextEl: ".swiper-button-next",
-    }
-  });
-  // Configurar e inicializar Photoswipe
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: '#my-slider',
-    children: 'a',
-    pswpModule: () => import('photoswipe')
-    });
-  lightbox.init();
-
-</script>
+<script type="module" src="/src/scripts/swiper-lightbox.js"></script>
