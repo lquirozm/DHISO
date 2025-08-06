@@ -1,14 +1,18 @@
-import Swiper from 'swiper';
-import 'swiper/css';
-import { Autoplay, Navigation } from "swiper/modules";
-import "swiper/css/navigation";
-import PhotoSwipeLightbox from 'photoswipe/lightbox';
-import 'photoswipe/style.css';
+---
+import { Fragment } from "astro/jsx-runtime";
+---
 
+<script>
+  import Swiper from 'swiper';
+  import { Autoplay, Navigation } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
 
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
   // Configurar Swiper
-  const swiper = new Swiper(".swiper", {
+  new Swiper(".swiper", {
     modules: [Navigation, Autoplay], // definir los módulos a usar
     loop: true,            // definir si los slides estarán en bucle
     slidesPerView: "auto",      // agregar número de slides para la pantalla
@@ -57,3 +61,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+</script>
