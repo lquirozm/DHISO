@@ -1,0 +1,51 @@
+[
+  {
+    "nombre": "Proyecto 1",
+    "portada": "/images/proyectos/1.CASA_ABULIA/img1.jpg",
+    "galeria": [
+      "/images/proyectos/1.CASA_ABULIA/img1.jpg",
+      "/images/proyectos/1.CASA_ABULIA/img2.jpg",
+      "/images/proyectos/1.CASA_ABULIA/img3.jpg"
+    ]
+  },
+  {
+    "nombre": "Proyecto 2",
+    "portada": "/images/proyectos/2.CASA_HORIZONTE/img1.jpg",
+    "galeria": [
+      "/images/proyectos/2.CASA_HORIZONTE/img1.jpg",
+      "/images/proyectos/2.CASA_HORIZONTE/img2.jpg",
+      "/images/proyectos/2.CASA_HORIZONTE/img3.jpg"
+    ]
+  },
+  {
+    "nombre": "Proyecto 3",
+    "portada": "/images/proyectos/3.CASA_LIENZO/img1.jpg",
+    "galeria": [
+      "/images/proyectos/3.CASA_LIENZO/img1.jpg",
+      "/images/proyectos/3.CASA_LIENZO/img2.jpg",
+      "/images/proyectos/3.CASA_LIENZO/img3.jpg"
+    ]
+  },
+  {
+    "nombre": "Proyecto 4",
+    "portada": "/images/proyectos/4.CASA_P/img1.jpg",
+    "galeria": [
+      "/images/proyectos/4.CASA_P/img1.jpg",
+      "/images/proyectos/4.CASA_P/img2.jpg",
+      "/images/proyectos/4.CASA_P/img3.jpg"
+    ]
+  },
+  {
+    "nombre": "Proyecto 5",
+    "portada": "/images/proyectos/5.CASA_SOL/img1.jpg",
+    "galeria": [
+      "/images/proyectos/5.CASA_SOL/img1.jpg",
+      "/images/proyectos/5.CASA_SOL/img2.jpg",
+      "/images/proyectos/5.CASA_SOL/img3.jpg",
+      "/images/proyectos/5.CASA_SOL/img4.jpg",
+      "/images/proyectos/5.CASA_SOL/img5.jpg",
+      "/images/proyectos/5.CASA_SOL/img6.jpg"
+    ]
+  }
+
+]

@@ -10,9 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.2.2",
+    "@vercel/analytics": "^1.5.0",
     "astro": "^4.16.18",
     "photoswipe": "^5.4.4",
+    "sweetalert2": "^11.22.3",
     "swiper": "^11.2.10"
   }
 }
